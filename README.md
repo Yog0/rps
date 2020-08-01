@@ -1,3 +1,6 @@
 Rock Paper Scissors game
 by Yog.0
-# rps
+
+Runs in console only for now.
+
+# Rock Paper Scissors

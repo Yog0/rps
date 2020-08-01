@@ -55,6 +55,19 @@ function declareWinner(name) {
     winner.style.color = 'red';
     winner.textContent = `${name} won!`;
     container.appendChild(winner);
+
+    let reset = document.createElement("button");
+    reset.innerHTML = "Click to reset"
+    container.appendChild(reset);
+    playerScore = 0;
+    compScore = 0;
+
+    reset.addEventListener('click', () => {
+        container.removeChild(content);
+        container.removeChild(winner);
+        container.removeChild(reset);
+    })
+
 }
 
 
@@ -77,16 +90,12 @@ function declareWinner(name) {
         score.textContent = `Player: ${playerScore}, Computer: ${compScore}`;
         container.appendChild(score);
 
-        if (playerScore == 5) {
+        if (playerScore == 2) {
             content.textContent = "";
-            playerScore = 0;
-            compScore = 0;
             declareWinner("You");
         }
-        else if (compScore == 5) {
+        else if (compScore == 2) {
             content.textContent = "";
-            playerScore = 0;
-            compScore = 0;
             declareWinner("The computer");
         }
 
